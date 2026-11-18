@@ -2,7 +2,7 @@ const art=`<button class="cover-art photo-cover" data-art="arctic" aria-label="E
 const people=[
 ['VF','Victor Frankenstein','The creator','A young scientist whose ambition leads him to create life. He is fascinated by discovery but fails to care for the being he brings into the world. His surname is Frankenstein; it is not the Creature’s name.'],
 ['?','The Creature','The outsider','An unnamed, intelligent being who learns language and longs for companionship. Repeated rejection deepens his suffering. Understanding his experience does not excuse his later violence.'],
-['RW','Robert Walton','The explorer','An Arctic explorer who writes letters to his sister, Margaret Saville. He meets Victor and records his account. Walton’s ambition mirrors Victor’s, inviting us to compare their choices.'],
+['RW','Robert Walton','The explorer','Robert Walton is an explorer who meets Victor in the Arctic. His letters introduce the story, and he records Victor’s experiences. Like Victor, Walton has a strong desire for discovery.'],
 ['EL','Elizabeth Lavenza','The family bond','Elizabeth Lavenza is Victor Frankenstein’s childhood companion and later his wife. She is kind, caring, and loyal, representing love and family in Victor’s life.'],
 ['HC','Henry Clerval','The loyal friend','Victor’s closest friend, known for his warmth, imagination, and interest in people and languages. His care for Victor contrasts with Victor’s obsessive isolation.'],
 ['JM','Justine Moritz','The innocent victim','Justine Moritz is a young woman who lives with and works for the Frankenstein family. She is kind and loyal, but she is wrongly accused and executed for William’s murder.'],
