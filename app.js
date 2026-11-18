@@ -29,8 +29,8 @@ reflection:{title:'Alone in the world',body:'The image of isolation from the ori
 vocabulary:{title:'Words and discovery',body:'The book-and-window illustration from the vocabulary slide in your presentation.',images:['p9-1.webp']}
 };
 const sceneKeys={1:'author',3:'beginning',4:'conflict',5:'ending',7:'reflection',8:'vocabulary'};
-function scene(key){return `<button class="slide-art scene-${key}" data-art="${key}" aria-label="Enlarge ${artwork[key].title}">${artwork[key].images.map((im,i)=>`<img src="assets/${im}" alt="${i===0?artwork[key].title:''}" class="layer layer-${i}" ${key==='author'?'':'loading="lazy"'}>`).join('')}<span>FROM YOUR PRESENTATION ?</span></button>`;}
-function openArt(key){const a=artwork[key];$('#modalBody').innerHTML=`<div class="eyebrow">ORIGINAL PRESENTATION / IMAGE GALLERY</div><h2>${escapeText(a.title)}</h2><div class="art-gallery">${a.images.map(im=>`<img src="assets/${im}" alt="${escapeText(a.title)}">`).join('')}</div>${a.body?`<p>${escapeText(a.body)}</p>`:''}`;$('#modal').showModal();}
+function scene(key){return `<button class="slide-art scene-${key}" data-art="${key}" aria-label="Enlarge ${artwork[key].title}">${artwork[key].images.map((im,i)=>`<img src="assets/${im}" alt="${i===0?artwork[key].title:''}" class="layer layer-${i}" ${key==='author'?'':'loading="lazy"'}>`).join('')}</button>`;}
+function openArt(key){const a=artwork[key];$('#modalBody').innerHTML=`<div class="art-gallery">${a.images.map(im=>`<img src="assets/${im}" alt="${escapeText(a.title)}">`).join('')}</div>`;$('#modal').showModal();}
 
 let current=0,remaining=300,running=false,notesOpen=false;
 const $=s=>document.querySelector(s); const escapeText=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
