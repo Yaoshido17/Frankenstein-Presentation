@@ -118,3 +118,34 @@ dialog h2{font-size:clamp(42px,4vw,62px)}
 @media(max-width:1100px){header{padding-left:24px;padding-right:24px}.edition{font-size:9px;letter-spacing:1px}.edition span{margin:0 8px}.header-actions{gap:10px}.ambience-controls{gap:8px}.ambience-volume input{width:60px}}
 @media(max-width:700px){header{padding:0 16px}.edition{display:none}.header-actions{gap:8px}.ambience-controls{gap:7px}#ambienceToggle{font-size:13px;padding:8px;min-height:40px}header #ambienceToggle span{display:inline}header #ambienceToggle .ambience-long{display:none}#ambienceState{margin-left:3px;font-size:11px}.ambience-volume>span[aria-hidden]{display:none}.ambience-volume input{width:60px}#fullscreen{padding:8px}}
 @media(max-width:360px){.brand span{display:none}.ambience-volume input{width:48px}}
+
+/* Keep the original YouTube player visible while ambience plays. */
+.ambience-dock{position:sticky;top:18px;align-self:start;order:3;z-index:2;width:320px;max-width:100%;margin:18px 0;padding:0 0 12px;background:var(--panel);border:1px solid #627568;border-radius:6px;box-shadow:0 12px 40px #0009}
+.ambience-dock[hidden]{display:none}
+.ambience-dock-heading{min-height:40px;padding:4px 10px 4px 14px;display:flex;gap:8px;align-items:center;justify-content:space-between}
+.ambience-dock-heading>span{font-size:11px;color:var(--accent);letter-spacing:1px}
+.ambience-dock-heading button{border:0;font-size:24px;padding:0 8px}
+.ambience-player{width:100%;height:200px;min-width:200px;min-height:200px;background:#000}
+.ambience-player iframe{width:100%;height:200px;display:block;border:0}
+.ambience-dock p{font-size:13px;color:var(--muted);line-height:1.45;margin:10px 14px 6px}
+.ambience-dock>a{font-size:13px;color:var(--accent);display:inline-block;margin:0 14px;line-height:1.5}
+
+@media(min-width:1001px){
+ .layout:has(>.ambience-dock:not([hidden])){grid-template-columns:205px minmax(0,1fr) 320px;gap:18px;padding-right:18px}
+ .layout:has(>.ambience-dock:not([hidden])) aside{order:1}
+ .layout:has(>.ambience-dock:not([hidden])) main{order:2;padding-left:24px;padding-right:24px}
+ .layout:has(>.ambience-dock:not([hidden])) .characters{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .layout:has(>.ambience-dock:not([hidden])) .vocab{grid-template-columns:repeat(3,minmax(0,1fr))}
+ :fullscreen .layout:has(>.ambience-dock:not([hidden])){display:grid;grid-template-columns:minmax(0,1fr) 320px}
+ :fullscreen .layout:has(>.ambience-dock:not([hidden])) .characters{grid-template-columns:repeat(7,minmax(0,1fr))}
+}
+@media(max-width:1000px){
+ .ambience-dock{position:relative;top:auto;margin:18px auto}
+ .layout:has(>.ambience-dock:not([hidden])){display:block}
+ .layout:has(>.ambience-dock:not([hidden])) aside{display:block;padding:8px 12px;border-right:0;border-bottom:1px solid var(--line)}
+ .layout:has(>.ambience-dock:not([hidden])) aside>.eyebrow,.layout:has(>.ambience-dock:not([hidden])) .aside-bottom{display:none}
+ .layout:has(>.ambience-dock:not([hidden])) nav{display:flex;overflow:auto}
+ .layout:has(>.ambience-dock:not([hidden])) nav button{white-space:nowrap}
+}
+@media(max-width:700px){.ambience-dock{max-width:calc(100% - 24px)}}
+
